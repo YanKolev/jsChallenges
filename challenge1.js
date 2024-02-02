@@ -19,13 +19,11 @@ const markMasskg = 78;
 const markheightcentimeter = 169;
 const markheightmeter = markheightcentimeter/ 100;
 const markBMI = markMasskg / (markheightmeter * markheightmeter);
-console.log(markBMI);
 
 const johnMasskg = 92;
 const johnheightcentimeter = 195;
 const johnheightmeter = johnheightcentimeter/ 100;
 const johnBMI =johnMasskg /(johnheightmeter * johnheightmeter);
-console.log(johnBMI);
 
 const markHigherBMI = markBMI > johnBMI;
-console.log(markHigherBMI);
+console.log(markBMI, johnBMI, markHigherBMI);
