@@ -18,3 +18,20 @@ console.log(countryPopulation);
 
 //When you declare a variable an use let (let javascriptIsFun = true,)
 //you can assign new value to the already existing variable you can write it: javascriptIsFun = "Yes!"
+
+//Variables:
+//If you want to mutate variable, or assign some other value- use let
+//Const- used for when the value will stay the same.=> leads to type error, you can not declate EMPTY Const variables.
+//Best practice- const by default, ONLY if you are sure-let.
+//AVOID VAR, knowledge for legacy reasons-works the same as let.
+
+
+// Assignment operators
+let x = 10 + 5;//15
+x +=10;// x = x+10=25
+x *=4; //x = x *4 = 100
+x++; //x = x+1
+x--; // x =x-1
+console.log(x);
+
+
