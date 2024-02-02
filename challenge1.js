@@ -16,11 +16,16 @@ m tall.
 m tall.*/
 
 const markMasskg = 78;
-const markheightmeter = 1,69;
-const markBMI = markMasskg / (markheightmeter ** 2);
+const markheightcentimeter = 169;
+const markheightmeter = markheightcentimeter/ 100;
+const markBMI = markMasskg / (markheightmeter * markheightmeter);
 console.log(markBMI);
 
 const johnMasskg = 92;
-const johnheightmeter = 1,95;
-const johnBMI =johnMasskg /(johnheightmeter ** 2);
+const johnheightcentimeter = 195;
+const johnheightmeter = johnheightcentimeter/ 100;
+const johnBMI =johnMasskg /(johnheightmeter * johnheightmeter);
 console.log(johnBMI);
+
+const markHigherBMI = markBMI > johnBMI;
+console.log(markHigherBMI);
