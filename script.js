@@ -33,3 +33,7 @@ x *=4; //x = x *4 = 100
 x++; //x = x+1
 x--; // x =x-1
 console.log(x);
+
+// ES6-Template literals- used with backticks ` `- you can write a sting with ${}
+// Can be used directly in console-log. Using for irregular strings.
+// Also used for multiple line strings- also used for multiline html elements
