@@ -37,3 +37,15 @@ console.log(x);
 // ES6-Template literals- used with backticks ` `- you can write a sting with ${}
 // Can be used directly in console-log. Using for irregular strings.
 // Also used for multiple line strings- also used for multiline html elements
+
+const age = 15;
+const isOldEnough = age >=18; //instead of the vabile, we just paste the condition
+
+//if()-condition that gets evaluated, if that condition is true, execute code in curly braces{}
+
+if (age >=18){
+    console.log('Sarah can start her driving liscense');
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young, wait another ${yearsLeft} years :)`)
+}
