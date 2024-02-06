@@ -38,8 +38,8 @@ console.log(x);
 // Can be used directly in console-log. Using for irregular strings.
 // Also used for multiple line strings- also used for multiline html elements
 
-const age = 15;
-const isOldEnough = age >=18; //instead of the vabile, we just paste the condition
+//const age = 15;
+//const isOldEnough = age >=18; //instead of the vabile, we just paste the condition
 
 //if()-condition that gets evaluated, if that condition is true, execute code in curly braces{}
 
@@ -59,3 +59,62 @@ if(birthYear <= 2000){
     century = 21;
 }
 console.log(century);
+
+// Type Conversion and Type Coercion
+// Type conversion is when you manually convert from 1 type to another.
+// Type Coercion is when JS automatically converts.
+
+// type conversion
+const inputYear = '1991';
+console.log (Number(inputYear)+18);//by using Number we convert the string into a number.
+console.log (Number('George'))// it will throw error NaN- not a number since can not be converted.
+
+console.log (String(23)); //Conversion to string.
+
+//type coercion
+console.log ('I am' + 23 + 'years old'); // plus operator converts numbers to string
+console.log ('23'- '10'- 3); //minus operator triggers string to number conversion 
+//if we use + it will be concatenation
+// multiply and devide- converts strings ->numbers
+
+let n = '1' + 1; //11 string '11'
+n = n - 1; //string 11->converted to number, 11-1=10
+console.log(n);
+
+//Truthy and Falsy
+
+// 5 falsy values: 0, ' '-empty string, undefined, null, NaN
+console.log (Boolean(0));
+console.log (Boolean(undefined));
+console.log (Boolean(Marco));
+console.log (Boolean(''));
+
+const money = 0;
+if(money){ //JS will convert no matter what we put as a boolean- if 0> converted to false.
+    console.log("Don't spend it all ;)");
+} else {
+    console.log('You should get a job!')
+}
+
+let height;
+if(height){
+    console.log('Yay height is defined');
+} else {
+    console.log('Height is Undefined')
+}
+
+// == VS === Equality operators
+
+const age = 18;
+if (age === 18) console.log('You just became an adult');
+// === strict equality operator, does not perform typecoercio- only returns where (have to be same type)
+// == loose equality operator, it does type coercion,(can compate string to a number)
+
+// === always default to tripple equal operator
+
+const favourite = prompt("what is your favorite number?");
+console.log (favourite); // it will pring a string since the value of the prompt is stored in favourite
+
+if(favourite == 23){ //loose equality- will create type coercion '23'== 23
+    console.log('Cool! 23 is an amazing number!')
+}
