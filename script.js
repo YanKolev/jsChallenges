@@ -112,9 +112,47 @@ if (age === 18) console.log('You just became an adult');
 
 // === always default to tripple equal operator
 
-const favourite = prompt("what is your favorite number?");
+/*const favourite = prompt("what is your favorite number?");
 console.log (favourite); // it will pring a string since the value of the prompt is stored in favourite
 
 if(favourite == 23){ //loose equality- will create type coercion '23'== 23
     console.log('Cool! 23 is an amazing number!')
+}*/
+// if we want to use strict operator in the version(as is best practice)
+// we need to wrap the function in the number function, otherwise it will throw string.
+
+const favourite = Number(prompt("what is your favorite number?"));
+console.log (favourite); 
+
+if(favourite === 23){ //Using strict equality operator
+    console.log('Cool! 23 is an amazing number!')
+//if you put another number it will be False and only printout number
+}else if(favourite === 7){
+    console.log('7 is also a cool number')
+}else if (favourite === 9){
+    onsole.log('9 is also a cool number')
+}else {
+    console.log('Number is not 23 or 7 or 9')
 }
+
+//Different operator
+// !== strict version / != loose version Always use strick version.
+
+if (favourite !== 23) console.log('Why not 23?')
+
+
+/* Boolean Logic- Not specifi for JS, used for all languaes:
+ AND operator: 
+ when you use AND- (ex Driver's license(A) AND good vision(B))
+ ONLY When A AND B statement are TRUE the result is true!
+ IF any of the conditions are false => outcome will be false.
+ TLDR- TRUE WHEN ALL ARE TRUE, no matter how many variables.
+ 
+ OR operator:
+ TRUE- when One of the conditions is true. regardless how many there are
+ 
+ 
+ NOT operator- inverts true/false values
+ NOT A, NOT B */
+
+ 
