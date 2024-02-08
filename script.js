@@ -142,17 +142,40 @@ if (favourite !== 23) console.log('Why not 23?')
 
 
 /* Boolean Logic- Not specifi for JS, used for all languaes:
- AND operator: 
+ AND operator - &&: 
  when you use AND- (ex Driver's license(A) AND good vision(B))
  ONLY When A AND B statement are TRUE the result is true!
  IF any of the conditions are false => outcome will be false.
  TLDR- TRUE WHEN ALL ARE TRUE, no matter how many variables.
  
- OR operator:
+ OR operator - || :
  TRUE- when One of the conditions is true. regardless how many there are
  
  
  NOT operator- inverts true/false values
  NOT A, NOT B */
 
- 
+ const hasDriversLicense = true; // Varibable A
+ const hasGoodVision = true; // B Variable
+
+ console.log(hasDriversLicense && hasGoodVision);
+ console.log(hasDriversLicense || hasGoodVision);
+ console.log (!hasDriversLicense);
+
+ const shouldDrive = hasDriversLicense && hasGoodVision;
+
+ if(hasDriversLicense && hasGoodVision){
+    console.log('Sarah is able to drive!')
+ } else {
+    console.log ('Someone else should drive... ')
+ }
+
+ const isTired = true; //C variable
+ console.log(hasDriversLicense || hasGoodVision || isTired);
+
+// adding 3rd condition. using NOT operator for 'isTired' variable
+ if(hasDriversLicense && hasGoodVision && !isTired){
+    console.log('Sarah is able to drive!')
+ } else {
+    console.log ('Someone else should drive... ')
+ }
