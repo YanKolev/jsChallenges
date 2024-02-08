@@ -20,23 +20,25 @@ Test data:
 §Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
 §Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106 */
 
-const dolphins1 = 96
-const dolphins2 = 108
-const dolphins3 = 89
+const dolphins1 = 97
+const dolphins2 = 112
+const dolphins3 = 101
 
 const dolphinsAVG = (dolphins1 + dolphins2 + dolphins1)/3;
 console.log (dolphinsAVG);
 
-const koalas1 = 88
-const koalas2 = 91
-const koalas3 = 110
+const koalas1 = 109
+const koalas2 = 95
+const koalas3 = 106
 
 const koalasAVG = (koalas1 + koalas2 + koalas3)/3;
 console.log (koalasAVG);
 
-if (dolphinsAVG > koalasAVG){
+const requiredMinimumScore = 100
+
+if (dolphinsAVG > koalasAVG && dolphinsAVG >= requiredMinimumScore){
     console.log('Dolphins average is higher, they win')
-} else if (dolphinsAVG === koalasAVG) {
+} else if (dolphinsAVG === koalasAVG && koalasAVG >= requiredMinimumScore && dolphinsAVG >= requiredMinimumScore) {
     console.log ('Equal scores. Its a tie!')
 } else{
     console.log('Koalas average is higher, they win')
