@@ -105,8 +105,9 @@ if(height){
 
 // == VS === Equality operators
 
-const age = 18;
-if (age === 18) console.log('You just became an adult');
+ /*const age = 18;
+if (age === 18) console.log('You just became an adult'); */
+
 // === strict equality operator, does not perform typecoercio- only returns where (have to be same type)
 // == loose equality operator, it does type coercion,(can compate string to a number)
 
@@ -216,3 +217,25 @@ if (favourite !== 23) console.log('Why not 23?')
  } else if (day === 'wednesday'|| day === 'thursday'){
     console.log ('Write code examples');
  }
+ //switch statement- write slightly more code but easily readable.
+
+ //Statements and expressions: 
+ //expressions produce values, statements are full sentences that are actions to be performed.
+
+ //Conditional /Ternary Operator
+
+ const age = 23;
+ age >= 18 ?console.log ('I like to drink wine'): //first like is IF part
+ console.log ('I like to drink water'); //second part is ELSE part
+
+ const drink = age >= 18 ? 'wine' : 'water';
+ console.log(drink);
+
+ let drink2; // this is the statement that ternary operator shortens
+ if (age >= 18) {
+    drink2 = 'wine';
+ } else {
+    drink2 = 'water';
+ }
+ console.log (drink2);
+ 
