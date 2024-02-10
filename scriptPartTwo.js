@@ -97,10 +97,6 @@ function cutFruitPieces(fruit){
     return fruit * 4;
 }
 
-
-
-
-
 function fruitProcessor(apples, oranges){ 
     const applePieces = cutFruitPieces(apples);
     const orangePieces = cutFruitPieces(oranges);
@@ -111,3 +107,25 @@ function fruitProcessor(apples, oranges){
 }
 
 fruitProcessor(2, 3);
+
+//Function review
+
+//making this function outside in order to call it by yearsofretirement
+const calcAge = function (birthYear){
+    return 2037 - birthYear;
+}
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+    const age = calcAge(birthYear);
+    const retirement = 65 - age;
+
+    if(retirement > 0){
+        console.log(`${firstName} retires in ${retirement}`)
+        return retirement; //return -exits the function
+    } else {
+        console.log (`${firstName} has already retiredd`);
+        return -1;
+    }
+}
+console.log(yearsUntilRetirement(1991, 'John'));
+console.log(yearsUntilRetirement(1970, 'Mike'));
