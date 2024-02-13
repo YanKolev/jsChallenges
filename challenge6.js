@@ -18,3 +18,12 @@ actually be the returned value of a function! So you can just call a function as
 values (so don't store the tip values in separate variables first, but right in the new
 array).
 */
+
+/*
+Previous code: 
+const bill = 430;
+const tip = bill <= 300 && bill >= 50 ? bill * 0.15 :
+bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip} , and the total value ${bill + tip}`);
+*/
+
