@@ -129,3 +129,103 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 }
 console.log(yearsUntilRetirement(1991, 'John'));
 console.log(yearsUntilRetirement(1970, 'Mike'));
+
+
+// Introduction into Arrays
+
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+//array is a big container of variable in which we can refrence
+
+
+const friends = ['Michael', 'Steven', 'Peter']; 
+console.log(friends);//first way of how we use arrays// literal syntax
+
+//second way of writing arrays
+
+const years = new Array(1991, 1992, 2008, 2020)//An array can hold as many values as we want and any values of type.
+//using array function, used parenthesis and the keyword new
+
+// If you want to target specific from the array to the console, use it as follows: 
+console.log (friends[0]);
+console.log (friends[2]);
+
+//number of elements in the array.
+console.log (friends.length); //it will log all the elements- will print 3
+// how to count an array
+console.log(friends[friends.length - 1]); // inside the brackets we can put any expression, 
+//expression can produce a value. example above- frends.length (3)- 1= 2 it will print position 2
+//you can not put statement inside the square brackets- JS expect expression
+
+
+//you can also add elements to the array/ to change it and mutate it
+friends[2]= 'Jay';
+console.log(friends);//it will replace peter->jay with square brackets syntax
+//Array is not a primitive value, hence we can always mutate it even if its CONST
+//you can not replace the whole array.
+
+//array can hold many types of information
+
+const jon = ['Jon', 'Smith', 2037- 1991, 'teacher', friends];
+console.log(jon);
+
+//Exercise
+
+const calcAge = function(birthYear){
+    return 2037 - birthYear;
+}
+
+const years = [ 1998, 1967, 2002, 2010, 2018];
+
+cont age1 = calcAge (years[0]);
+cont age2 = calcAge (years[1]);
+cont age1 = calcAge (years[years.length -1]); // we use -1 to account that the index of the array is 0 based
+
+const ages = [calcAge (years[0]), calcAge (years[1]) ] //we can place function calls in an array as they will produce a value. 
+// first the function code will be ran by JS and then placed into the arrays
+
+// Basic Array Operations
+
+//Methods are array operations
+
+
+// --ADDING ELEMENTS--
+const friends = ['Michael', 'Steven', 'Peter']; 
+//push method- adds elements to the end of the array
+
+const newLength = friends.push('Jay');
+//push is basically a function that directly modifies the array
+
+//-- Method that adds elents to the beginning of the array
+
+friends.unshift ('John');
+// also returns the length of the new array 
+
+// --REMOVING ELEMENTS-- 
+
+// pop- opposite of push - removes last element of the array
+friends.pop(); // you do not need to pass an argument, just type the function
+// it does NOT length of new array- removes the removed element
+const popped = friends.pop();
+console.log(popped);
+
+//shift- remove the first element, returns the removed element as well
+friends.shift();
+console.log(friends);
+
+//method that returns the index of 
+console.log(friends.indexOf('Steven'));
+
+
+//Modern version of indexof (ES6)
+// instead of returnning the index of the element but return True/False if the element is in the array
+console.log (friends.includes('Steven')); //this method uses strict equality ( DOES NOT DO TYPE COERCION)
+console.log (friends includes('Bob')); 
+
+// you can write conditionals with it
+
+if (friends.includes('Peter')) {
+    console.log('You have a friend caled Peter');
+}
+//using it with IF statement, hence if its true-the console prints it
