@@ -19,11 +19,29 @@ values (so don't store the tip values in separate variables first, but right in 
 array).
 */
 
-/*
-Previous code: 
+
+/* Previous code: 
 const bill = 430;
 const tip = bill <= 300 && bill >= 50 ? bill * 0.15 :
 bill * 0.2;
 console.log(`The bill was ${bill}, the tip was ${tip} , and the total value ${bill + tip}`);
 */
 
+
+
+function tipValue (bill){
+    if(bill <= 300 && bill >= 50){
+        console.log(bill * 0.15);
+    } else{
+        console.log(bill * 0.2);
+    }
+    return tipValue;
+}
+
+
+tipValue();
+
+const bills =  [125, 555, 44]
+const bills1 = tipValue (bills[0]);
+const bills2 = tipValue (bills[1]);
+const bills3 = tipValue (bills[2]);
