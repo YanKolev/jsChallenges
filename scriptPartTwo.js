@@ -229,3 +229,126 @@ if (friends.includes('Peter')) {
     console.log('You have a friend caled Peter');
 }
 //using it with IF statement, hence if its true-the console prints it
+
+
+// -------OBJECTS----
+
+// So far we used arrays to store multiple related values in the same variable.
+
+const johnArray = [
+    'John',
+    'Smith',
+    2037- 1991,
+    'teaher',
+    ['Michael', 'Peter', 'Steven'] // friends array inside of an array
+];
+//this is a data structure which combines multiple values that all belong to this john entity.
+//in array there is no way we can give them a name, we can only refrence them by the order number in which they appear in the array.
+
+//in Objects we define key value pairs (basically giving each of the values a name)
+// we define it with {}- curly bracket syntax
+
+//key value pairs- the key is the variable name + the value
+
+const john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    age: 2037-1991,
+    job: 'teacher',
+    friends:['Michael', 'Peter', 'Steven']
+};
+//this is an object that contains 5 key-value pairs also named properties.
+//Objects are the most fundamental concept in JS, simply writing object in the code is the simplest way to create.
+//its called Object literal syntax- as we are literally writing the syntax.
+//in Objects the order does not matter when we want to retrieve them. In arrays the ORDER MATTERS.
+
+// DOT VS BRAKET NOTATION
+
+const john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    age: 2037-1991,
+    job: 'teacher',
+    friends:['Michael', 'Peter', 'Steven']
+};
+
+// dot notation- way to extract the property from the object: 
+console.log(john.lastName); //the dot is operator that retrieves the property
+
+//bracket notation - in the bracket we can put any expression that we like, we can compute it from some operation
+//operation = expression - aka something that produces value
+console.log(jonas['lastName']);
+
+const nameKey = 'Name';
+console.log(john['first' + nameKey]);
+console.log(john['last' + nameKey]);
+//only works with the bracket not with dot
+
+
+const interestedIn = prompt ('What do you want to know about John? Choose between firstName, lastName, age, job, and friends');
+console.log(john[interestedIn]); // putting any expression- hence it will look up the value of the john object
+//Using the prompt function we will request the user to select and then with the
+// bracket notation we will provide the info in the console
+
+if(john[interestedIn]){
+    console.log(jonas[interestedIn]);
+} else {
+    console.log("Wrong request! ");
+}
+
+// HOW TO ADD NEW PROPERTIES TO THE OBJECT
+
+john.location = 'Portugal';
+john['twitter'] = '@johnsmint123';
+console.log(john);
+
+//Challege
+//"John has 3 friends, and his best friends is called Michael"
+
+console.log(`${john.firstName} has ${john.friends.length} friends, and his best friend is called ${john.friends [0]}`);
+
+
+// OBJECT METHODS
+
+const john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1991,
+    job: 'teacher',
+    friends:['Michael', 'Peter', 'Steven']
+    hasDriversLicense: true,
+
+   // calcAge: function(birthYear){
+    //    return 2037-birthYear;
+   // }
+    //calcaAge is a property of the john - any function that is attached to a object is called
+    // a method. hence you need columns after calcage
+
+    // calcAge: function(){
+    //     console.log(this)
+    //     return 2037 - this.birthYear;
+    // }
+
+//in the method -this- keyword points to jonas.
+    calcAge: function(){
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    }
+
+    getSummary: function(){
+        return `${this.firstName} is a ${this.calcAge()} - year old
+        ${john.job} and he has ${this.hasDriversLicense ? 'a': 'no'} driver's license.`
+
+    }
+};
+console.log(john.calcAge());
+
+
+// you can also access it as bracket notation
+console.log(john['calcAge'](1991));
+
+//challenge 
+//"John is a 46-year old teacher, and he has a driver's license"
+// adding get Summary- function 
+
+console.log(jonh.getSummary();)
