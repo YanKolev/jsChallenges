@@ -13,3 +13,28 @@ respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
 Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
 tall.
 */
+
+
+const john = {
+    fullName: 'John Smith',
+    heigth: 1.95, 
+    weigth: 92,
+
+    calcBMI: function(){
+        const BMI = this.weigth/(this.heigth ** 2);
+        return BMI;
+    }
+};
+
+const mark = {
+    fullName: 'Mark Miller',
+    heigth: 1.69,
+    weigth: 78,
+    
+    calcBMI: function(){
+        const BMI = this.weigth/(this.heigth ** 2);
+        return BMI;
+    }
+}
+
+console.log(mark.calcBMI());
