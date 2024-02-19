@@ -444,3 +444,64 @@ for(let i = 0; i < johnArray.length ;i++){
 
     console.log(johnArray(i), typeof johnArray(i));
 }
+
+// --Loop over an array backwards and Loops in loops--
+
+const johnArray = [
+    'John',
+    'Smith',
+    2037- 1991,
+    'teaher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+// now we need to start at index 4, 3, 2, 1, 0
+
+for(let i = johnArray.length - 1; i >= 0; i--){
+    console.log(i, johnArray(i));
+}
+
+// Loop inside of a loop
+
+for( let exercise = 1; exercise <4; exercise++){ //in this code we are using <4 which is a different way of expressing >=3, since 4>3 the loop does not exceed it
+    console.log(`Starting exercise ${exercise}`);
+
+    for(let rep = 1; rep < 6 ; rep++){
+        console.log(`Exercise ${exercise}:lifting weight repetion ${rep}`);
+    }
+}
+
+//While Loop
+
+//Copy the for loop from earlier to have it as comparisson
+
+for(let rep = 1 ; rep <= 10 ; rep++){
+    console.log(`Lifting weights repetition ${rep}`);
+}
+
+// Implementing the same with while loop
+// still counter, condition and a way to increase the couter
+// for the while loop we can only specifiy a condtion.
+
+let rep = 1; // defining outside
+while (rep <= 10){ //it will run While the condition in the brackets is true
+    console.log(`Lifting weights repetition ${rep}`);
+    rep++; //here we place the counter at the end of the codeblock that is repeating
+}
+
+//While loop is more versatile, it does not a counter, just a condition
+// it can be any condition, even without a counter.
+
+//simple example that does not depend on a counter
+
+//Making dice loop
+
+let dice = Math.trunc(Math.random() * 6) + 1 ;
+
+while(dice !== 6){
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1 ;
+    if (dice === 6) console.log("Loop is about to end.");
+}
+// when dice is 6 at the begining, it will be empty value to the console,
+//while loop does not depend on a counter, whenver you do not know how many adoration the loop will have
