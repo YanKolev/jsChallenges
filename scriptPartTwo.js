@@ -351,4 +351,96 @@ console.log(john['calcAge'](1991));
 //"John is a 46-year old teacher, and he has a driver's license"
 // adding get Summary- function 
 
-console.log(jonh.getSummary();)
+console.log(jonh.getSummary());
+
+// ------ Looooops------------
+
+// for loops: 
+//keeps runnging while condition is TRUE (rep <=10)
+// for(let-using let as its going to change,)
+//loop statement has 3 parts- first part-initial value- ex.counter
+//second part- logical condition whih is checked each time before the code is exeuted
+//third part- which is increase the counter after each adoration
+for(let rep = 1;rep <= 10;rep = rep + 1); //basic structure 
+for (let rep =1; rep <=10; rep++){ //second way which is more cleaner
+    console.log(`Lifting weights repetion ${rep}`); // by using template literal u can access the updated variable.
+}
+//One of the most useful example of the for loop is tool through arrays: 
+
+const johnArray = [
+    'John',
+    'Smith',
+    2037- 1991,
+    'teaher',
+    ['Michael', 'Peter', 'Steven']
+];
+//if you want to log all 5 elements of the array to thre console.
+// traditional counter variable is "i"
+//we need to start it at 0, as the array is 0 based when reading elements
+
+/* we need to achieve printing on the console all the elements of the array:
+ console.log(johnarray[0]);
+ console.log(johnarray[1]);
+ .....
+ conole.log(johnarray[4]);
+
+ But we are using he for loop */
+
+for(let i = 0; i < 5 ;i++){ //condition in the middle is the most tricky part-
+    console.log(johnArray(i)); // we need to use the counter variable i
+}
+//Since Johnas array at postion 5 does not exist, 
+// which means that the i counter variable should always stay below 5
+// issue is that we hardcoded the array to 5 elements. 
+//if we add adition element e need to change it-> compute it
+
+for(let i = 0; i < johnArray.length ;i++){ // by using lenght we can add elements and JS will calculate them and the loop can be executed.
+    console.log(johnArray(i), typeof johnArray(i));
+}
+
+//create array with types of variables
+
+const types = [];
+
+for(let i = 0; i < johnArray.length ;i++){ 
+    //reading from john Array
+    console.log(johnArray(i), typeof johnArray(i));
+
+    //Filling types array 
+    types [i] = typeof johnArray[1]; //basically making an empty array but we fill it with the exact same type as the johnarray
+
+    // how to add element to the array // We use push as we add it to the beginning of the array
+    types.push(typeof johnArray(i));
+}
+
+// practical example
+
+const years = [1991, 2007,1969,2020];
+const ages = [];
+
+//we are going to loop years and fill the ages array
+
+for(let i = 0; i < years.length; i++){
+   ages.push(2037- years[i]);
+}
+
+// CONTINUE AND BREAK STATEMENTS 
+
+//CONTINUE - to exit the current adoration of the loop / Break- completely terminate the loop
+
+
+//If we want to use the loop to print elements that are strings- Use Continue
+for(let i = 0; i < johnArray.length ;i++){ 
+    if(typeof johnArray(i) !== 'string') continue;
+
+    console.log(johnArray(i), typeof johnArray(i));
+}
+
+
+// Using Break statement, below is loop that will break once it reaches a number
+
+for(let i = 0; i < johnArray.length ;i++){ 
+    if(typeof johnArray(i) === 'number') break;
+
+    console.log(johnArray(i), typeof johnArray(i));
+}
