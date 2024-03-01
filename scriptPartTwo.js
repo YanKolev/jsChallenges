@@ -559,3 +559,37 @@ const calcTempAmliture = function (temps){
 };
 const amplitude = calcTempAmliture (tempteratures);
 console.log(amplitude);
+
+//Problem 2: 
+//Fucntion should now recieve 2 arrays of temperature
+//1)- Understading he problem: With 2 arrays should we implement the functionality twice? 
+//No- Just merge the 2 arrays
+
+//Breaking the problem into sub-problems
+//-how to merge 2 arrays? 
+
+//copying the function from before as well as addind the concat funcion in order to merge the arrays
+
+const calcTempAmlitudeNew = function (t1, t2){
+
+    const temps = t1.concat(t2);// adding the concat functuion
+
+
+
+    let max = temps[0];
+    let min = temps[0];
+
+
+    for(let i = 0; i <temps.length; i ++){
+        const curTemp = temps[i];
+        if(typeof curTemp !== 'number') continue;
+
+        if(curTemp > max) max = curTemp;
+        if (curTemp < min) min = curTemp;
+
+    }
+    console.log(max, min);
+    return max = min;
+};
+const amplitudeNew = calcTempAmlitudeNew ([3, 5, 9], [9, 0 ,5]); // here we put the 2 arrays to concatinate and decipher
+console.log(amplitudeNew);
