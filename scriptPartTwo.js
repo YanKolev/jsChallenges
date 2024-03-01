@@ -505,3 +505,57 @@ while(dice !== 6){
 }
 // when dice is 6 at the begining, it will be empty value to the console,
 //while loop does not depend on a counter, whenver you do not know how many adoration the loop will have
+
+// pRactice Dev tools and issues: 
+
+/* We work for a company building a smart home
+thermometer. Our most recent task is this:  Give an array
+ of temperatures of the day, calculate the temperature amplitude. Keep in mind
+ that sometimes there might be a sensor error. */
+
+
+const tempteratures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+
+//1- understand the problem
+//What is the amplitude? : Answear: difference between highest and lowest temp
+//-how to compute max and min temperature
+//-what is a sensor error and what do do when occurs?
+
+//2- Breaking the problem into sub-problem
+//- how to ignore errors?
+//-find max value in temp array
+//-find minimum value in temp array
+//subtract min from max and return it-amplitude
+
+//function for calculating the max value
+const calcTempAmliture = function (temps){
+
+    let max = temps[0];
+    for(let i = 0; i <temps.length; i ++){
+        if(temps[i]> max) max = temps[i];
+    }
+    console.log(max);
+};
+calcTempAmliture ([3,7,4]);
+//max will be first element of the array. 
+
+//repeating function to calc both minimum and maximum
+
+const calcTempAmliture = function (temps){
+    let max = temps[0];
+    let min = temps[0];
+
+
+    for(let i = 0; i <temps.length; i ++){
+        const curTemp = temps[i];
+        if(typeof curTemp !== 'number') continue;
+
+        if(curTemp > max) max = curTemp;
+        if (curTemp < min) min = curTemp;
+
+    }
+    console.log(max, min);
+    return max = min;
+};
+const amplitude = calcTempAmliture (tempteratures);
+console.log(amplitude);
