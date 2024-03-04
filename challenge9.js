@@ -10,3 +10,37 @@ into sub-problems!
 Test data:
 §Data 1: [17, 21, 23]
 §Data 2: [12, 5, -5, 0, 4] */
+
+
+/*
+
+1) Understanding the problem:
+-Array transformed to string, separated by ...
+-What is the X days?- Since its forecast its the
+index + 1 
+
+
+
+
+2) Breaking into sub-problems:
+- transform the array into string
+- transfor each element to string with C
+- stings needs to contain day- index+1
+-add ... between elements and start end of string
+*/
+
+const  data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+
+`... ${data[0]}oC ...${data[0]}oC...${data[0]}oC...${data[0]}oC...`
+
+
+const printForecast = function (arr){
+    let str = ' ';
+    for (let i =0; i< arr.length;i++){
+        str = str + `${arr[i]}oC} in ${i + 1} days ... `;
+    }
+    console.log('...'+ str);
+};
+
+printForecast(data1);
