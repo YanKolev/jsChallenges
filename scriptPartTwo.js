@@ -593,3 +593,20 @@ const calcTempAmlitudeNew = function (t1, t2){
 };
 const amplitudeNew = calcTempAmlitudeNew ([3, 5, 9], [9, 0 ,5]); // here we put the 2 arrays to concatinate and decipher
 console.log(amplitudeNew);
+
+
+//Making a function that converts celsius taken from prompt
+//and transforms it into kelvin
+
+const measureKelvin = function(){
+    const measurment = {
+        type: 'temp',
+        unit: 'celsius',
+        value: Number(prompt ('Degrees celsius:')) // This needs to be converted to number in order to work properly.
+    }
+
+    const kelvin = measument.value + 273;
+    return kelvin;
+};
+// A/ IDENTIFY THE BUG
+console.log(measureKelvin());
