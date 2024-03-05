@@ -34,9 +34,9 @@ Congratulate the player on guessing the word
 // Create an array of words
 const words = [
     "javascript",
-    "monkey",
+    "martian",
     "amazing",
-    "pancake"
+    "zombie"
     ];
     // Pick a random word
 const word = words[Math.floor(Math.random() * words.length)];
