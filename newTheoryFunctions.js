@@ -34,3 +34,26 @@ since the variable i starts at 0 and repeats until it increments to howmanytimes
 Each time through the loop the functin logs the string i +"=^.^="
 */ 
 drawCats(5);
+
+//You can use more than one argument, to add it separate it via comma
+
+function (argument1, argument2){
+    console.log("My first argument was: "+ argument1);
+    console.log("My second argument was: "+ argument2);
+}
+
+/* following function printMultipleTimes, is like 
+drawCats except that is has a second agrument called whatToDraw. */
+
+let printMultipleTimes = function (howManyTimes, whatToDraw){
+    for (let i = 0; i < howManyTimes; i++){
+        console.log(i + " "+ whatToDraw);
+    }
+}
+/* printMultipleTimes function prints the string you enger for whatToDraw as many times as you
+specify with the argument howManyTimes. The second argument tells the function what to pring, 
+the first argment tells the function how many times to print it. */
+// remember that the function index starts from 0
+
+printMultipleTimes( 5, "^_^");
+
