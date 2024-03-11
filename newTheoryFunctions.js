@@ -12,7 +12,7 @@ let sayHelloTo = function(name){
     console.log("Hello "+ name +"!");
 };//the function uses and argument-name to say helo to someone you specify
 
-function (argument){ //on this row is the arument name
+function (argument) { //on this row is the arument name
     console.log("My argument was:"+ argument); //this function body can use the argument
 };
 
@@ -57,3 +57,19 @@ the first argment tells the function how many times to print it. */
 
 printMultipleTimes( 5, "^_^");
 
+// Returnign values from functions
+// the output of a function is called a return value
+//u can save a return value in a variable, pass it to another function
+// or combine it with another code- ex this line adds 5 to the return value of call to math.floor (1.2345)
+5 + Math.floor(1.2345);
+// equals to 6
+/* Mathe floor is a function that returns a number u pass, rounded to the nearest whole number. 
+imagine replacing it with the return of a function call, which is number one */
+
+let double = function (number){
+    return number * 2;
+};
+
+double(3); // 3 * 2 = 6
+//functions can return only one value- if u dont tell the function to return anything
+// it will return undefined.
