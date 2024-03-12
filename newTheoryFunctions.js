@@ -176,3 +176,19 @@ return "The fifth letter of your name is "+ name[4] +".";
 fifthLetter("NIcholas");
 
 fifthLetter("Nick"); // it will return undefined as the function knows that the nae isnt long enough
+
+/* we can use multiple return keywords inside a different if statements in a function body
+to have a return a different value depending on the input.
+
+Small sample game to award medals: */
+
+let medalForScore = function (score){
+    if (score < 3){
+        return "Bronze"; // the functions ends if the score is less than 3
+    }
+
+    if (score < 7){ // we know that score must be at least 3,
+        return "Silver";
+    }
+    return "Gold";
+};

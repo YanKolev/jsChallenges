@@ -71,3 +71,47 @@ remainingLetters--;
 // Show the answer and congratulate the player
 alert(answerArray.join(" "));
 alert("Good job! The answer was " + word);
+
+
+
+// Hangman, using functions 
+
+let word = pickWord();
+let answerArray = setupAnswerArray(word);
+let remainingLetters = word.length;
+while (remainingLetters > 0) {
+showPlayerProgress(answerArray);
+let guess = getGuess();
+if (guess === null) {
+break;
+} else if (guess.length !== 1) {
+alert("Please enter a single letter.");
+} else {
+let correctGuesses = updateGameState(guess, word, answerArray);
+remainingLetters -= correctGuesses;
+}
+}
+showAnswerAndCongratulatePlayer(answerArray);
+
+//Functions to fill in: 
+
+    let pickWord = function () {
+    // Return a random word
+    };
+    let setupAnswerArray = function (word) {
+    // Return the answer array
+    };
+    let showPlayerProgress = function (answerArray) {
+    // Use alert to show the player their progress
+    };
+    let getGuess = function () {
+    // Use prompt to get a guess
+    };
+    let updateGameState = function (guess, word, answerArray) {
+    // Update answerArray and return a number showing how many
+    // times the guess appears in the word so remainingLetters
+    // can be updated
+    };
+    let showAnswerAndCongratulatePlayer = function (answerArray) {
+    // Use alert to show the answer and congratulate the player
+    };
