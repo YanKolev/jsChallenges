@@ -73,3 +73,106 @@ let double = function (number){
 double(3); // 3 * 2 = 6
 //functions can return only one value- if u dont tell the function to return anything
 // it will return undefined.
+
+/* Upon calling a function from larger piece of code, the function's value can be used whever
+that call was placed.
+ex: 
+
+double(5) + double (6); // function calls 10+12
+result->22
+
+You can also call a function into another function as argument
+and the function call will be substituted with its return value
+
+ex: 
+
+double(double(3));
+12
+- First is executed the function call inside the call double(3)= 3 * 2= 6
+double(6) => 6 * 2 = 12
+*/
+
+//expanding on the previous insult generator, originam function:
+randomWords[Math.floor(Math.random() * randomWords.length)];
+
+//we can turn it into a function , reuse it to pick a random word from an aray without havint to enter the same code
+
+let pickRandomWord = function (words){
+    return words [Math.floor(Math.random() * words.length)];
+};
+
+//creating randomWords array 
+
+let randomWords = ["Planet", "Worm", "Flower", "Computer"];
+
+pickRandomWord(randomWords); //caling the function
+
+// Re-creating random insult generator
+
+let randomBodyParts = ["Face", "Nose", "Hair"];
+let randomAdjectives = [ "Smelly", "Boring", "Stupid"];
+let randomWords = ["Fly", "Marmot", "Stick", "Monkey", "Rat"];
+
+//Pick a random body part from the array:
+let randomBodyPart = randomBodyParts [Math.floor(Math.random() * 3)];
+
+//pick a random adjective from the array: 
+let randomAdjective = randomAdjectives[Math.floor(Math.random() * 3)];
+
+//pick a random word from the words array: 
+let randomWord = randomWords[Math.floor(math.random() * 5];
+
+//combine all the strings into a sentence
+
+let randomString = "Your" + randomBodyPart + " is like a " +
+randomAdjective + " " + randomWord + "!!!";
+
+randomString;
+
+//in order to NOT repeat ourselves  we can make it into a function
+
+let randomBodyParts = ["Face", "Nose", "Hair"];
+let randomAdjectives = [ "Smelly", "Boring", "Stupid"];
+let randomWords = ["Fly", "Marmot", "Stick", "Monkey", "Rat"];
+
+//Join allthe random strings into: 
+
+let randomString =  "Your" + pickRandomWord(randomBodyParts)+
+" is like a " + pickRandomWord(randomAdjectives) +
+" " + pickRandomWord(randomWords) + "!!!";
+
+randomString; //calling the function here
+
+//Making random insult generator into a function 
+
+generateRandomInsult = function (){
+
+    let randomBodyParts = ["Face", "Nose", "Hair"];
+    let randomAdjectives = [ "Smelly", "Boring", "Stupid"];
+    let randomWords = ["Fly", "Marmot", "Stick", "Monkey", "Rat"];
+
+
+    let randomString =  "Your" + pickRandomWord(randomBodyParts)+
+    " is like a " + pickRandomWord(randomAdjectives) +
+    " " + pickRandomWord(randomWords) + "!!!";
+
+    return randomString // only the addition of a return 
+};
+
+generateRandomInsult();
+
+/* common way to use return is to leave a function early if any of the arguments of the functions are invalid,
+but only if they are not the kinf of arguments that the function needs to run properly.*/
+
+let fifthLetter = function (name){
+    if (name.length < 5){
+        return;
+    }
+};
+
+return "The fifth letter of your name is "+ name[4] +".";
+
+
+fifthLetter("NIcholas");
+
+fifthLetter("Nick"); // it will return undefined as the function knows that the nae isnt long enough
