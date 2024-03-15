@@ -47,28 +47,39 @@ document.querySelector('.check').addEventListener('click', function(){
 
     document.querySelector('.number').style.width = '30rem'; //modification need to be specified in a string.
 
-
-    //When guess is too high
-   } else if(guess > secretNumber){
-     if(score > 1){
-        document.querySelector('.message').textContent = 'Too high!';
-        score--; //decreasing the score with the wrong guess, by 1 
-        document.querySelector('.score').textContent = score;
-     } else {
-        document.querySelector('.message').textContent = 'You lost the game!';
-        document.querySelector('.score').textContent = 0;
-     }
-   } else if (guess < secretNumber) {
-      //When guess is too low
-    if(score > 1){
-        document.querySelector('.message').textContent = 'Too low!';
-        score--; //decreasing the score with the wrong guess, by 1 
-        document.querySelector('.score').textContent = score;
-     } else {
-        document.querySelector('.message').textContent = 'You lost the game!';
-        document.querySelector('.score').textContent = 0;
-     }
+      //When guess is different from secrec number
+   } else if( guess !== secretNumber){
+      if(score > 1){
+         document.querySelector('.message').textcontent = guess > secretNumber ?'Too high!': 'Too low!'; //Using ternary operator to change the message.
+         score--;
+         document.querySelector('.score').textContent = score;
+      } else {
+         document.querySelector('.message').textContent = 'You lost the game!';
+         document.querySelector('.score').textContent = 0;
+      }
    }
+   
+   // //When guess is too high
+   // }else if(guess > secretNumber){
+   //   if(score > 1){
+   //      document.querySelector('.message').textContent = 'Too high!';
+   //      score--; //decreasing the score with the wrong guess, by 1 
+   //      document.querySelector('.score').textContent = score;
+   //   } else {
+   //      document.querySelector('.message').textContent = 'You lost the game!';
+   //      document.querySelector('.score').textContent = 0;
+   //   }
+   // } else if (guess < secretNumber) {
+   //    //When guess is too low
+   //  if(score > 1){
+   //      document.querySelector('.message').textContent = 'Too low!';
+   //      score--; //decreasing the score with the wrong guess, by 1 
+   //      document.querySelector('.score').textContent = score;
+   //   } else {
+   //      document.querySelector('.message').textContent = 'You lost the game!';
+   //      document.querySelector('.score').textContent = 0;
+   //   }
+   // }
 });
 
 
