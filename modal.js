@@ -36,3 +36,30 @@ btnCloseModal.addEventListener('click',closeModal); //NB- do not call the functi
 
 //making the popup close by click anywhere on the screen
 overlay.addEventListener('click', closeModal);
+
+//adding ESC keyboard event.- need still to used the event listenener, its a global event
+//we usually listen on the whole document
+
+/* In order to know which key was pressed will be stored in the event
+that is gonna occur as soon as the key is pressed-> our handler function is waiting to happen
+when it occurs- JS creates an object, it contains all the information about the event itself and can be accessed in the handler
+function. In order to figure out which key is pressed- we need to give the function a paramenter- e 'which stands for event'
+then as the even occurs, JS will call this function with the event object as an argument.
+we can only define the function, we do not call it JS does. */
+
+document.addEventListener('keydown',function(e){
+    console.log(e.key);
+
+    // if (e.key === 'Escape') { //if the pressed key is Escape and if the the modal does NOT contain the hidden class-> then execute this function to close the modal
+    //     if (!modal.classList.contains('hidden')){ //using ! to make it that is NOT hidden->call the function
+    //         closeModal();
+    //     }
+    // }
+
+    //we can optimize it like that 
+
+    if (e.key === 'Escape'&& !modal.classList.contains('hidden')){
+        closeModal();
+    }
+
+});
