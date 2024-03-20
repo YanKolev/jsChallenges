@@ -37,6 +37,9 @@ btnCloseModal.addEventListener('click',closeModal); //NB- do not call the functi
 //making the popup close by click anywhere on the screen
 overlay.addEventListener('click', closeModal);
 
+
+
+
 //adding ESC keyboard event.- need still to used the event listenener, its a global event
 //we usually listen on the whole document
 
@@ -56,10 +59,9 @@ document.addEventListener('keydown',function(e){
     //     }
     // }
 
-    //we can optimize it like that 
+    //we can optimize it like that - optimizing nad using AND operator
 
     if (e.key === 'Escape'&& !modal.classList.contains('hidden')){
         closeModal();
     }
-
 });
