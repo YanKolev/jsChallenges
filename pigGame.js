@@ -15,16 +15,32 @@ const btnNew = document.querySelector ('.btn--new');
 const btnRoll = document.querySelector ('.btn--roll');
 const btnHold = document.querySelector ('.btn--hold');
 
+let scores, currentScore, activePlayer, playing;
+//declaring empty variables in order to be used in the init function
 
 //starting status
+const init = function(){
+
+ scores = [0, 0];
+ currentScore = 0; //can not be inside a function, otherwise it will be always set to zero, hence its outside
+ activePlayer = 0;
+ playing = true;
+
 score0Element.textContent = 0;
 score1Element.textContent = 0;
-diceElement.classList.add('hidden');
+current0Element.textContent = 0;
+current1Element.textContent = 0;
 
-const scores = [0, 0];
-let currentScore = 0; //can not be inside a function, otherwise it will be always set to zero, hence its outside
-let activePlayer = 0;
-let playing = true;
+diceElement.classList.add('hidden');
+player0Element.classList.remove('player--winner');
+player1Element.classList.remove('player--winner');
+player0Element.classList.add('player--active');
+player1Element.classList.remove('player--active');
+};
+
+init();
+
+
 
 const switchPlayer = function(){
     document.getElementById(`current--${activePlayer}`).textContent = 0; //making the score back to zero before the switch with ternary operator below
@@ -89,3 +105,5 @@ btnHold.addEventListener('click', function(){
 
 
 });
+
+btnNew.addEventListener('click', init);
