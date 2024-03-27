@@ -65,3 +65,55 @@ Inside a exection context:
 Arrow functions dont have argument object and this keyword, they can use it them from their closes regular function parent.
 
 Call Stack- place where exection context get stacked on top of each other, to keep track of where we are in the execution. */
+
+/* 
+SCOPE AND SCOPE CHAIN 
+
+What is scoping?
+- Scoping controls how our programs are organized and accessed. 
+'Where do variables live?' or 'Where can we access a certain variable, and where not? ''
+
+-Lexical scoping- scoping is controleld by placement of functions and blocks in the code;
+" Function that is written inside another function has access to the variables of the parent function"
+
+-Scope is the space or enviourment in which a certain variable is declared (variable enviourment in case of function)
+There is global scope, function scope and block scope;
+
+Scope of a variable: Region of our code where a certain variable can be accessed.
+
+3 TYPES OF SCOPE: 
+-Global Scope: 
+1.outside of any function or block.
+2.Variables declared in a global scope are accessible everywhere.
+
+
+-Function Scope:
+1.Variables are only accessible only inside the function, NOT OUTSIDE. 
+Also called local variables. 
+
+
+-Block Scope (ES6): 
+1.Variables are acccessle only inside block scope.
+*everything between curly baces- like IF statement or for loop.
+2. However this only applies to let and const variables.(only let and const are restricted to the block they are created)
+*IF used VAR then that variable can be still accessible even if its in a block, scope to the current function or global scoped,
+VAR- function scoped. they ignore blocks (only if you use strict mode- USE IT ANYWAY)
+3. Functions are also block scoped (only in strict mode)
+
+SCOPE CHAIN: If one scope wants to use certain variable, but can not find it in the current scope, 
+it will look up the scope chain, looking for it into the parent function
+this process is called Variable lookup in scope chain.
+
+Variables are not copied from one scope to another, 
+instead scope simply look for a variable in the scope chain and use it. 
+
+It only works upwards from the inner to the outer, Outer scope can not have access to inner scope variables.
+CAN ONLY LOOK UP ON THE SCOPE CHAIN.
+
+
+
+====SCOPE CHAIN VS CALL STACK====
+
+Scope chain has  nothing to do with the order
+in which functions were called in the callstack. */
+
