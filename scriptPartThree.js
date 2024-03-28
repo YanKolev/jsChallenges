@@ -243,3 +243,10 @@ var x = 1;
 let y = 2;
 const z = 3;
 console.log (x === window.x);// Variables declared with var, can be declared on the global window object.
+
+// --------------  THE  THIS KEYWORD----------
+
+/*
+this keyword/ variable is a special variable that is created for every execution context(every function).
+Takes the value of (points to) the 'owner' of the function in which the this keyword is used. */
+
