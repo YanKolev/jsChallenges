@@ -193,3 +193,53 @@ before declaration is bad practice and should be avoided.
 Using functions before actual declaration,
 var hoisting is just a byproduct. */
 
+
+// ======== HOISTING AND TDZ PRACTICE ======= 
+
+//Using the variables before declaring them
+console.log(me);
+console.log(job);
+console.log(year);
+
+var me = 'John'; // hoisted, but hoisted to the value of undefined.
+let job = 'teacher'; // error- ucaught referenceError
+const year = 1991; //error- ucaught referenceError can not access before initialization
+
+//Hoisting functions
+
+console.log(addDecl(2,3)); // it will work due to the hoisting
+console.log(addExpr(2,3)); // it will NOT work as its has the Const variable- the function is transformed to a const, hence its in the TDZ
+console.log(addArrow(2,3));// same as the const
+
+function addDecl(a,b){
+    return a+b;
+}
+
+const addExpr = function(a,b){
+    return a+b; 
+}
+
+const addArrow = (a,b) => a+b;
+
+// If we used VAR instead of CONST, it will get undefined error as its not a function,
+// due to the transformation and having Var properties.
+
+//----Mistake about hoisting---
+//Example- function declaration, we should not used VAR
+
+if (!numProducts) deleteShoppingCart(); //it will delete all products, due to hoisting, as 
+//when we use VAR-> it becomes UNDEFINED,
+
+
+var numProducts = 10;
+
+function deleteShoppingCart(){
+    console.log('All product deleted')
+};
+// best practices, USE CONST and LET, declare variables at the top of each scope
+//always declare all your functions first, use them only after the declaration
+
+var x = 1;
+let y = 2;
+const z = 3;
+console.log (x === window.x);// Variables declared with var, can be declared on the global window object.
