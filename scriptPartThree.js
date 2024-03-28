@@ -128,11 +128,23 @@ function calcAge (birthYear){
 
         if(birthYear >= 1981 && birthYear <= 1996){
             var milenial = true;
+            // Creating NEW variable with same name as outer scope's variable.
+            const firstName = 'Steen';
+            //Reassigning outer scope's variable
+            output = 'NEW OUTPUT';
+
+
             const str = `Oh, you are are a milenial, ${firstName}`;
             console.log(str);
         }
         //Const and Let variables are only available for the block they are created.
         //Var is a function scope and the JS engine will be able to find it.(they ignore the block,as they are function scope)
+
+        //===== FUNCTIONS ARE ALSO BLOCKSCOPED STARTING ES6
+        function add (a, b){
+            return a+b;
+        }//scope of the function that is defined within the block- ONLY IN STRICT MODE, IF REMOVED STRICT MODE  U CAN CALL IT.
+
 
 
     }
@@ -146,3 +158,38 @@ const firstName = 'John';
 calcAge(1991);
 //in the global scope we do not have access to  any variables defined in any other scope
 //as in order the scope can be only loop UP and since the global scope is on top in can not look down to check for variables.
+
+
+// ------- HOISTING AND TDZ ----------
+
+/* Looking into variable enviourment of the execution context 
+and in particular how variables are actually created in JS.
+
+Hoisting: Makes some types of variables accessible/usabl in the code before they are actually declared.
+'Variables lifted to the top of their scope'
+
+function declarations are hoisted - we can use them before the code starts executing.
+
+var variables- hoisted, function scoped
+
+let and const variables- not hoisted, blockscoped
+
+function expressions and arrows- depends if useing var or let/const (behave exacly the same way with what are they created)
+
+
+TDZ- temporal Dead Zone
+
+Each and every let/const variable get their own temporal dead zone, 
+that starts at he begining of the scope and stops until the line that is defined. 
+and the variable is only safe to use only AFTER TDZ. 
+
+What is the need for TDZ? Introduced in ES6-
+Makes is easier to avoid and catch errors- accessing variables 
+before declaration is bad practice and should be avoided. 
+
+-Makes const variables  actually works, so const can not be re-assigned.
+
+-Why hosting?
+Using functions before actual declaration,
+var hoisting is just a byproduct. */
+
