@@ -117,3 +117,32 @@ CAN ONLY LOOK UP ON THE SCOPE CHAIN.
 Scope chain has  nothing to do with the order
 in which functions were called in the callstack. */
 
+// ====== SCOPING PRACTICE ======
+
+function calcAge (birthYear){
+    const age = 2037 - birthYear;
+    
+    function printAge(){
+        const output = `You are ${age}, born in ${birthYear}`;
+        console.log(output);
+
+        if(birthYear >= 1981 && birthYear <= 1996){
+            var milenial = true;
+            const str = `Oh, you are are a milenial, ${firstName}`;
+            console.log(str);
+        }
+        //Const and Let variables are only available for the block they are created.
+        //Var is a function scope and the JS engine will be able to find it.(they ignore the block,as they are function scope)
+
+
+    }
+    printAge();
+
+    return age;
+
+}
+
+const firstName = 'John';
+calcAge(1991);
+//in the global scope we do not have access to  any variables defined in any other scope
+//as in order the scope can be only loop UP and since the global scope is on top in can not look down to check for variables.
