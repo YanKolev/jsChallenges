@@ -393,4 +393,64 @@ Basically everything else is objects.
 Refrence types is the name of the Objets. Objects created with: Object literal, Arrays, Functions, etc
 
 Biggest Difference is that Primitive types are stored in the Call Stack and 
-Reference types are stored in the heap.
+Reference types are stored in the heap. */
+
+
+//-------------- Primitives vs Objects Practice -------------
+
+
+//Primitive types: 
+
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+//each primitive value it will be saved in its own place in the stack. 
+
+//if we make a object, there will be interference between the heap memory and the stack.
+
+//REFRENCE TYPES: 
+
+const jessica = {
+    firstName: 'Jessica', 
+    lastName: 'Williams',
+    age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log ('Before marriage:', jessica);
+console.log ('After marriage:',marriedJessica);
+
+//The last name of davis will be in the original object of jessica and not just in the one that we coppied.
+//it happed when we attempted to copy the original object, IT DID NOT CREATE A NEW OBJECT IN THE HEAP. INSTEAD USED THE EXISTENT.
+// this is also the reason that we can change properties into the married jessica as it was declared with CONST(should not be able to change), 
+//however what needs to be constant is the value in the stack. and in the STACK- HOLDS ONLY THE REFRENCE AND THE OBJECT IS IN THE HEAP
+// we are changing the only the underline object in the HEAP, and that is OK!
+//this has nothing to do with const or let, thats only about the value in the stack,
+
+//we can not make a new object.
+
+marriedJessica = {}; //Because the empty object will create a new position in the stack, 
+//if it was let- then we could do it, but since we used Const in the married jessica we are unable to place an empty object
+
+//Copying objects: 
+
+const jessica2 = {
+    firstName: 'Jessica', 
+    lastName: 'Williams',
+    age: 27,
+    family:['Alice', 'Bob']
+};
+
+//we can use an function object assign to merge 2 objects
+
+const jessicaCopy = Object.assign({},jessica2) // the result it will be a new object
+jessicaCopy.lastName = 'Davis';
+console.log ('Before marriage:', jessica2);
+console.log ('After marriage:',jessicaCopy);
+
+//by doing so, the copy object is a real copy of the orriginal. 
+//Object. assign- only works on the first level. IT creates a shallow copy and not a deepclone.
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
