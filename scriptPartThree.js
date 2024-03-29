@@ -298,7 +298,7 @@ const calcAgeArrow = birthYear => {
 };
 calcAgeArrow(1991);
 
-const john = {
+const John = {
     year: 1991,
     calcAge: function(){
         console.log(this); //it is the john object-> when we have a method call, the this keyword inside of th method will be the object that is calling the method
@@ -319,3 +319,49 @@ Matilda.calcAge();
 
 const f = john.calcAge; //copying the function into the f ariable. NO CALLING IT!!!
 f(); // this keyword it will be undefined and it can not read  year of undefined.
+
+
+
+
+//------------  REGULAR FUNCTIONS VS ARROW FUNCTIONS ----------
+
+const John = {
+    firstName: 'John',
+    year: 1991,
+    calcAge: function(){
+        console.log(this);
+        console.log (2037- this.year);
+        
+        //Solution 1 to function inside of a method
+        const self = this;
+        const isMillenial= function(){
+            console.log(self.year >= 1981 && self.year <=1996);
+        }
+    },
+    greet: ()=> console.log(`Hey ${this.firstName}`);
+}
+john.greet(); // the result it will be Hey undefined, an arrow function does not get its own this keywords, aka its parents aka the global scope.(window object)
+// dont use arrow function as a method- NEVER!!! 
+
+//FUNCTION INSIDE OF A METHOD
+john.calcAge(); 
+//as we added Milenial function above- we get undefined error- this keyword
+
+//Solution 2 after ES6: to use arrow function that inherints this keyword from its parent scope.
+
+const isMillenial = () => {
+    console.log(this);
+    console.log(this.year >= 981 && this.year <= 1996);
+};
+isMillenial();
+
+//Arguments keyword- functions get access to it. Only available by regular functions
+
+const addExpr = function (a,b) {
+    console.log(arguments);
+    return a + b;
+};
+addExpr(2,5);
+addExpr(2,5,8,12)// a function to accept more paramaters that we actually specified.- it makes them into an array of the arguments
+
+var addArrow = (a,b) => a+b;//arrow function does not have such keyword.
