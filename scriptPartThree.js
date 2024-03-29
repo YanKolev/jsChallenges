@@ -365,3 +365,32 @@ addExpr(2,5);
 addExpr(2,5,8,12)// a function to accept more paramaters that we actually specified.- it makes them into an array of the arguments
 
 var addArrow = (a,b) => a+b;//arrow function does not have such keyword.
+
+
+
+
+// ------------ PRIMITIVES VS OBJECTS------------
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+    name: 'John',
+    age: 30,
+};
+
+const friend = me;
+friend.age = 27;
+
+/* Primitive types: 
+Number, String, Boolean, Undefined, Null, Symbol, BigInt
+
+Basically everything else is objects. 
+
+Refrence types is the name of the Objets. Objects created with: Object literal, Arrays, Functions, etc
+
+Biggest Difference is that Primitive types are stored in the Call Stack and 
+Reference types are stored in the heap.
