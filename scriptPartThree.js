@@ -278,3 +278,44 @@ John.calcAge();
 
 //this will never point to the function itself and also not to the variable enviourment.
 
+// -------THIS KEYWORD PRACTICE------------
+
+console.log(this);
+//it will provide that the this keyword is a window object in the global scope.
+
+const calcAge = function(birthYear){
+    console.log(2037- birthYear);
+    console.log(this); // undefined- inside this regular function call, because we are in strict mode.
+};
+calcAge(1991);
+
+//now with an arrow function: 
+
+const calcAgeArrow = birthYear => {
+    console.log(2037- birthYear);
+    console.log(this); // this keyword wil be a window in this function, the arrow function does not get its this keyword,
+    // it uses the lexical this keyword in the parent scope-> window in the global scope
+};
+calcAgeArrow(1991);
+
+const john = {
+    year: 1991,
+    calcAge: function(){
+        console.log(this); //it is the john object-> when we have a method call, the this keyword inside of th method will be the object that is calling the method
+        console.log (2037- this.year);
+    }
+}
+john.calcAge(); //john is the owner of the method
+
+//method borrowing, we borrowed the calcage
+
+const Matilda = {
+    year: 2017,
+};
+
+Matilda.calcAge = john.calcAge;
+Matilda.calcAge();
+//this keyword always points to the object that is calling the method.
+
+const f = john.calcAge; //copying the function into the f ariable. NO CALLING IT!!!
+f(); // this keyword it will be undefined and it can not read  year of undefined.
