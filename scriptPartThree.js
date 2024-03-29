@@ -248,5 +248,33 @@ console.log (x === window.x);// Variables declared with var, can be declared on 
 
 /*
 this keyword/ variable is a special variable that is created for every execution context(every function).
-Takes the value of (points to) the 'owner' of the function in which the this keyword is used. */
+Takes the value of (points to) the 'owner' of the function in which the this keyword is used. 
+
+This is NOT static, It depends on how the function is called, and its value is only assigned when the 
+function is actually called. 
+
+First way to call a function: 
+Method-> this-> points to the object htat is calling the method.*/
+
+const John = {
+    name: 'John',
+    year: 1989,
+    calcAge: function(){ //calcAge is method,
+        return 2037- this.year; //john is the this value, and you can access its properties
+    }
+};
+John.calcAge();
+
+// Another way we call this keyword -> we can call them as normal functions, without being attached to objects.
+//however it will return undefined
+// Simple function call ->this = undefined
+//it can be only used in strickt mode, otherwise it will point to the global object-> in browserrs is the window object
+
+//Arrow funnctions: 
+//They do not get their own this keyword
+//this-> <this of surrounding function(lexical this)>
+
+//If function is caled as event listener- > this will point to the DOM element that the handler is attached to. 
+
+//this will never point to the function itself and also not to the variable enviourment.
 
